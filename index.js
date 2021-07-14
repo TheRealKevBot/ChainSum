@@ -21,9 +21,21 @@
 // addTwo(3)(5); // 10
 // We can assume any number being passed in will be valid whole number.
 
+// Walkthrough helped on second half, https://www.youtube.com/watch?v=mq0ArUMYJXM 
+
+
+
 function add(n){
-    
+    let sums = function (x) {
+       return add(n + x)
+    }
+    sums.valueOf = function() {
+        return n
+    }
+    return sums 
 } 
+
+
 
 console.log(add(1), 1);
 console.log(add(1)(2), 3);
